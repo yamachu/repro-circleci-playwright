@@ -11,4 +11,4 @@ jobs:
       - run:
           command: |
             npx playwright install chromium
-            npx playwright install-deps chromiumn
+            npx playwright install-deps chromium
