@@ -9,6 +9,10 @@ jobs:
       - run: sudo apt-get update
       - run: npm ci
       - run:
+          # https://gihyo.jp/admin/serial/01/ubuntu-recipe/0718
+          name: Ignore needrestart
+          command: echo "\$nrconf{restart} = 'l';" | sudo tee /etc/needrestart/conf.d/list-restart.conf
+      - run:
           command: |
             npx playwright install chromium
             npx playwright install-deps chromium
